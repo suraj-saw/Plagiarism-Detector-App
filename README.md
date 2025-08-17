@@ -73,6 +73,7 @@ PlagiarismDetectorApp/
 │── pubspec.yaml
 │── requirements.txt
 
+```
 
 ⚡ Getting Started
 
