@@ -1,0 +1,32 @@
+Achievement of fast and reliable travel time on urban road 
+network is one of the major objectives for a transport planner 
+against the enormous growth in vehicle population and urban 
+traffic in most of the metropolitan cities in India. Urban arterials or main city corridors are subjected to heavy traffic flow 
+resulting in degradation of traffic quality in terms of vehicular delays and increase in travel time. Since the Indian roadway traffic is characterized by heterogeneity with dominance 
+of 2Ws (Two wheelers) and 3Ws (Auto rickshaw), travel times 
+are varying significantly. With this in background, the present 
+paper focuses on identification of travel time attributes such as 
+heterogeneous traffic, road side friction and corridor intersections for recurrent traffic condition and to develop an appropriate Corridor Travel Time Estimation Model using Multi-Linear 
+Regression (MLR) approach. The model is further subjected to 
+sensitivity analysis with reference to identified attributes to realize the impact of the identified attributes on travel time so as to 
+suggest certain measures for improvement.
+
+Fast and reliable movement of people and goods is one of 
+the key functions of the Arterial and Sub-Arterial roads in 
+urban areas (Yang, 2005). Traffic pressure owing to the significant growth in vehicle population on such roads in most 
+of the metropolitan cities, particularly in developing countries, 
+has reached alarming proportion due to increased economic 
+activities resulting in a longer and unreliable travel time. Travel 
+time is affected by various attributes besides traffic and physical characteristics of corridors (Lin et al., 2005). Pedestrian 
+encroachments and haphazard road side parkings are further 
+adding to the congestion level. Travel time variation and longer travel time not only add to the anxiety and stress of the 
+commuters but also result in waste of productive time (Ravi 
+Shekhar et al., 2012). These attributes vary from place to place 
+with time. Keeping this in view, an urban traffic corridor has 
+been considered to probe into the major travel time attributes 
+for recurrent congestion conditions, so as to develop a suitable 
+travel time estimation model. The model finds application in 
+urban transportation planning and traffic management apart 
+from assessment of corridor traffic performance. The study 
+corridor belongs to Surat, the second largest city in the state of 
+Gujarat in India as a typical case of corridor travel time studies.

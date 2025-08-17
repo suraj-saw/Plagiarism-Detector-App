@@ -1,0 +1,39 @@
+Trip distribution finds prime place after trip generation in sequential modelling of travel demand to cover the spatial 
+dimensions in a geographical area, to reflect on trip length and frequency. It provides the basis for strategic land use 
+and transport infrastructure development both at local and regional levels. Trip distribution problems in the real world 
+are quite complex with association of uncertainty in the decision making and therefore calls for an unorthodox 
+approach to deal with the concerned issue. Soft computing technique - Fuzzy Logic (FL) is believed to be capable of 
+addressing the uncertainty lying in the travellers’ behaviour and has been sought to develop realistic behavioural 
+models in the recent years. FL takes into account linguistic variables and is based on simple and logical “IF-THEN” 
+rules which closely resemble human thought process. Fuzzy Logic based trip distribution models are developed 
+employing Fuzzy C-mean (FCM) clustering, and are compared for their performance with the Genfis based approach, 
+where a Sugeno-type Fuzzy Inference System (FIS) is generated using Subtractive clustering. Surat, a fast growing 
+metropolitan city in India is considered to realize the study. The models developed here, find applications in strategic 
+land-use and transport planning for developing Indian cities.
+
+Four stage modelling process is the commonly employed method for forecasting travel demand, involving phases 
+such as trip generation, trip distribution, mode choice and traffic assignment. Trip distribution analysis plays vital role 
+as it deals with the destination choice phase. Conventional trip distribution models which has major limitation that the 
+input variables need to have crisp values and hence should be measured accurately, which consumes lot of time and 
+resources. Moreover, decision of trip maker for choosing a destination involves human approximations which are not 
+precisely captured by these conventional models. This can be overcome by using artificial intelligence techniques like 
+fuzzy logic for modeling trip distribution. Fuzzy logic try to harness the human knowledge which is often guided by 
+approximations by accepting input values in linguistic terms. The fuzzy rule base comprises of several IF-THEN rules 
+which closely resemble human knowledge and decision-making. Thus to overcome limitation of traditional model, 
+application of fuzzy logic seems to be most appropriate to consider ambiguity, imprecision and vagueness in 
+influencing variables. Fuzzy logic model in contrast to the conventional model takes into account highly non-linear 
+relationship between input and output variables.
+Clustering is the effective tool for natural grouping of data from a large data set, and allows concise representation 
+of characteristics of the data. Given a data set, the aim of clustering is to partition it into different groups (clusters) so
+that the members in the same group are of similar nature, whereas members of different groups are dissimilar. While
+clustering, various similarity measures can be considered, one of the most commonly used is distance between data 
+samples. The Fuzzy Inference System (FIS) is a simple way to construct systems models without using complex 
+analytical equations. The Fuzzy C-mean algorithm and Subtractive clustering algorithm are implemented to find the 
+number and the position of clusters for a set of highly non-linear data. In the present study, different FIS are created 
+using Fuzzy C mean clustering as well as Subtractive clustering. Fuzzy C-mean clustering provides a method that 
+shows how to group data points that populate some multidimensional space into a specific number of different clusters.
+As for subtractive clustering, the radii parameter is changed to obtain different number of clusters. Generally, 
+increasing the number of generated cluster yields an improvement in result. For subtractive clustering the radii 
+parameters are tuned. This automatically generates the number of clusters. The fuzzy models developed with the help 
+of these two clustering techniques are compared here to find out the efficiency of the clustering systems and thereby 
+arriving at realistic trip distribution models

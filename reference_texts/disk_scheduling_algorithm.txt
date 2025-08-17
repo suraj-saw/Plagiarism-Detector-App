@@ -1,0 +1,36 @@
+Disk scheduling is a technique operating systems use to manage the order in which disk I/O (input/output) requests are processed. Disk scheduling is also known as I/O Scheduling. The main goals of disk scheduling are to optimize the performance of disk operations, reduce the time it takes to access data and improve overall system efficiency. Disk scheduling algorithms are crucial in managing how data is read from and written to a computer’s hard disk. These algorithms help determine the order in which disk read and write requests are processed, significantly impacting the speed and efficiency of data access. Common disk scheduling methods include First-Come, First-Served (FCFS), Shortest Seek Time First (SSTF), SCAN, C-SCAN, LOOK, and C-LOOK. By understanding and implementing these algorithms, we can optimize system performance and ensure faster data retrieval.
+
+Importance of Disk Scheduling in Operating System
+Multiple I/O requests may arrive by different processes and only one I/O request can be served at a time by the disk controller. Thus other I/O requests need to wait in the waiting queue and need to be scheduled.
+Two or more requests may be far from each other so this can result in greater disk arm movement.
+Hard drives are one of the slowest parts of the computer system and thus need to be accessed in an efficient manner.
+
+Key Terms Associated with Disk Scheduling
+Seek Time: Seek time is the time taken to locate the disk arm to a specified track where the data is to be read or written. So the disk scheduling algorithm that gives a minimum average seek time is better.
+Rotational Latency: Rotational Latency is the time taken by the desired sector of the disk to rotate into a position so that it can access the read/write heads. So the disk scheduling algorithm that gives minimum rotational latency is better.
+Transfer Time: Transfer time is the time to transfer the data. It depends on the rotating speed of the disk and the number of bytes to be transferred.
+Disk Access Time = Seek Time + Rotational Latency + Transfer Time 
+      Total Seek Time = Total head Movement * Seek Time
+Disk Response Time: Response Time is the average time spent by a request waiting to perform its I/O operation. The average Response time is the response time of all requests. Variance Response Time is the measure of how individual requests are serviced with respect to average response time. So the disk scheduling algorithm that gives minimum variance response time is better.
+
+1. FCFS (First Come First Serve)
+FCFS is the simplest of all Disk Scheduling Algorithms. In FCFS, the requests are addressed in the order they arrive in the disk queue. Let us understand this with the help of an example.
+Advantages of FCFS
+Every request gets a fair chance
+No indefinite postponement
+Disadvantages of FCFS
+Does not try to optimize seek time
+May not provide the best possible service
+
+2. SSTF (Shortest Seek Time First)
+In SSTF (Shortest Seek Time First), requests having the shortest seek time are executed first. So, the seek time of every request is calculated in advance in the queue and then they are scheduled according to their calculated seek time. As a result, the request near the disk arm will get executed first. SSTF is certainly an improvement over FCFS as it decreases the average response time and increases the throughput of the system. Let us understand this with the help of an example.
+Advantages of Shortest Seek Time First
+The average Response Time decreases
+Throughput increases
+Disadvantages of Shortest Seek Time First
+Overhead to calculate seek time in advance
+Can cause Starvation for a request if it has a higher seek time as compared to incoming requests
+The high variance of response time as SSTF favors only some requests
+
+3. SCAN
+In the SCAN algorithm the disk arm moves in a particular direction and services the requests coming in its path and after reaching the end of the disk, it reverses its direction and again services the request arriving in its path. So, this algorithm works as an elevator and is hence also known as an elevator algorithm. As a result, the requests at the midrange are serviced more and those arriving behind the disk arm will have to wait.

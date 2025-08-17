@@ -1,0 +1,30 @@
+Rapid urbanization trends observed in Indian metropolitan cities have resulted in significant growth in travel 
+demands and traffic congestion thereby today. To understand the nature of congestion, and its control .A system 
+for measuring the severity of traffic congestion is needed. The main objective of the present paper is to develop 
+mixed traffic congestion model. Qualitative rating technique has been adopted in five graded linguistic 
+variables. The technique is also adopted for noting down road side disturbances of roadside parking, pedestrian 
+encroachment, land-use impacts and vendors’ areas. The uncertainty environment does prevail in situation 
+perceptions. Therefore fuzzy rule based approach has been adopted in modelling.
+
+Rapid urbanization in cities has resulted in building of pressure on urban infrastructure requirements. Intensity 
+and impact has been significant on urban travel and traffic. Along the growth in population, the trip rates, rising 
+traffic on road network and vehicular delay and traffic congestion etc. are normal scenario in our metropolitan 
+cities. Traffic Congestion is now a serious urban problem. Congestion is one of the major concerns of traffic 
+engineers as well as travelers. It occurs whenever traffic demand exceeds road capacity. With traffic bottleneck 
+and traffic congestion and many cities and towns of India are suffering from acute form of transport problem.
+Many measures have been proposed to represent the status of traffic conditions on arterial roadways in urban 
+areas. The debate about what is the most appropriate measure continues. To understand the nature of congestion 
+and to control its growth, a system for measuring the severity of traffic congestion is needed. Such a measure 
+provides the base for traffic engineers and policy makers to identify problems and determine the effectiveness of 
+mitigation strategies. In addition, a consistent and uniform measure will allow comparison of traffic conditions 
+at different locations and also over time at the same location so that priorities for improvements can be 
+developed, which helps the public to understand the traffic conditions objectively.
+The existing methods for the traffic congestion evaluation either calculate traffic delays of all vehicles in the 
+system using the traffic flow data, or evaluate the changes of long-term travel times and fuel consumption.
+There are number of factors varying on traffic congestion pertaining to road system, traffic conditions, traffic 
+impedance and driver’s perceptions of congestion calling for proper analysis. Therefore, it is necessary to 
+consider not only from planners angle but also from the travelers’ perceptions about the traffic performance and 
+to deal with uncertainty in human judgements. In view of this, an urban arterial road of Surat, a fast growing 
+metropolitan city in Gujarat is considered as the study area of the present project so that field surveys can be 
+carried, analyzed and an appropriate Urban Corridor Traffic Congestion Model (UCTCM) can be developed to 
+evaluate the congestion levels.

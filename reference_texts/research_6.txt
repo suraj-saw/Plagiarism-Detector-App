@@ -1,0 +1,95 @@
+With increase in city size and population in developing country like India, the 
+travel demand is increasing very fast which calls for an efficient and effective transit to fulfill 
+the demand of travelling public. The transit accessibility is one of the most alarming factors 
+of the increased urbanized areas of these cities. The case study presented the spatial transit 
+accessibility index modeling with due consideration factors viz. walking distance and walking 
+time of the study area. The spatial accessibility is measured on the basis of home interview 
+data and as well on GIS base to develop “Accessibility Catchments” through buffering process 
+for different accessibility scales of radius of 250m, 350m etc. The catchment areas marked 
+provide the scope to identify “Accessibility Thirst Areas”. The research work further addresses 
+the development of proposed LOS for both distance and time units. The transit accessibility 
+index modeling and proposed LOS of the present study shows the promising results and can 
+apply to the same sized urban cities. These findings presented in the paper are case specific 
+and can be apply as a base for finding the spatial accessibility status for metropolitan cities.
+
+With increase in city size and population 
+in developing country like India, the travel 
+demand is increasing very fast which calls for 
+an efficient and effective transit to fulfill the 
+demand of travelling public. The operational 
+planning of the bus system, quality of service 
+are the major factors deciding the ridership 
+levels for the given demand profile. However 
+effective and efficient public transport 
+system, it is quite essential to understand 
+the accessibility status. Accessibility is 
+concerned with the opportunity that an 
+individual at a given location possesses to 
+participate in a particular activity or set of activities. Accessibility is defined by U.S. 
+Department of Environment (1996) as ‘‘the 
+ease and convenience of access to spatially 
+distributed opportunities with a choice 
+of travel.” Accessibility depends on the 
+transportation, temporal (time), and spatial 
+location constraints which limits the ability 
+of individuals to participate in productive 
+activities (Odoki et al., 2001). Accessibility 
+measurement is one of the critical factors of 
+the present urbanized cities. Present research 
+study has focused on the spatial accessibility 
+of the public transport.
+Being the first points of contact between 
+the passenger and the transit service, access 
+to public transport stops is an important 
+factor affecting overall transit trip travel time 
+(Foda and Osman, 2010). Many studies on 
+public transport have shown that walking 
+is the most natural and important mode 
+to access public transport (Cervero, 2001; 
+Loutzenheiser, 1997; Mitchell and Stokes, 
+1982; Stringham, 1982). In planning for 
+the provision of bus-based transit service, 
+accessing a bus stop is considered to be 
+achieved mainly by walking (Foda and 
+Osman, 2010). 
+Walking accessibility to public transport is 
+applied to indicate the quality or performance 
+of public transport service (Polzin et al., 
+2000; Rudnicki, 1999). Based on an assumed 
+average walking speed of about 1.3 m/s, 5 
+minutes of walking is considered reasonable 
+in urban areas, which are about 400meters 
+in terms of walking distance (Levinson, 
+1992; Foda and Osman, 2010). Over the 
+past decade, many researchers have turned 
+to geographical information systems (GIS) 
+technology for accessibility analysis (Arentze 
+et al., 1994; Geertman and Ritsema Van 
+Eck, 1995; Gutiérrez et al., 1998; Juliao, 
+1999; Kwan, 1998; O’Sullivan et al., 2000; 
+O’Sullivan and Morrall, 1996; Shen, 1998; 
+Van Eck and De Jong, 1999). The indexes 
+of accessibility that describe the correlation 
+between land use patterns and transportation 
+systems have been used extensively by 
+researchers and policy makers, especially in 
+assessing the existing transportation system 
+and forecasting its performance (Dong et 
+al., 2006).
+Present study mainly describes the spatial 
+accessibility which is measured on the 
+basis of home interview data and as well 
+on GIS base to develop Accessibility 
+Catchments through buffering process. The 
+structure of the paper is as follows. The next section briefly reviews the previous 
+literatures studies. A section describing 
+the database follows it. Development of 
+Transit Accessibility Index (TAI) and 
+transit preference analysis are presented 
+in the section after that. Modeling of 
+transit accessibility with its results and GIS 
+Software base with its impact are described 
+in the next section. Proposed LOS of the 
+transit accessibilities for the study areas are 
+mentioned in the second last section. Key 
+conclusions are presented in the last section.

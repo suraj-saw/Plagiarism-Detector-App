@@ -1,0 +1,37 @@
+Transportation planning for any city evolves on the basis of complex interplay 
+between urban activity, transport and land use system to result in varied travel patterns. Travel 
+pattern can be defined at micro level to include individual journey departure and arrival time, 
+journey duration and distances to make way for temporal trip generation and distribution 
+from specific area. Trip generation is the first step of four stages of travel forecasting analysis 
+mostly followed all over the world. Traditionally, it is focused on the prediction of aggregate 
+trip generation by a household rather than the choice of individual activity participation. 
+However, spatial and temporal activity domains are equally important in forecasting process 
+and strategic urban transportation planning. The present paper attempts to develop Activity 
+Based (AB) Temporal Trip Generation Models (ABTGM) for primary activities to cover 
+work and educational trips considering fast growing Surat city of Gujarat, India as study area. 
+Home interview surveys are carried to provide household and socioeconomic characteristics 
+and the activity travel diary information to focus on the activity based tours rather the trips. 
+
+Trip generation is the first step of the fourstep travel forecasting modelling procedure. 
+It is a very important step since it sets up 
+not only the framework for the subsequent 
+forecasting tasks but also the magnitudes 
+of zonal trip productions. But, this model 
+explicitly ignores the spatial and temporal 
+inter-connectivity inherent in household 
+travel behavior (Jovicic, 2001; McNally 
+and Rindt, 2007). The fundamental theory 
+of travel demand, that travel is a demand 
+derived from the demand for activity 
+participation (Bowman, 1998), is explicitly 
+ignored. The main limitations of the FourStage Model can be noted that the focus rest 
+on trips for the purposes rather the tours 
+with the sequence of activities, there by 
+missing spatial and temporal considerations (Ruey, 1997). The approach adopts a holistic 
+framework that recognizes the complex 
+interactions in activity and travel behaviour. 
+Therefore, by predicting which activities are 
+performed at particular destinations and 
+times, trips and their timing and locations 
+are implicitly forecasted in activity based 
+model (Bhat and Singh, 2000).

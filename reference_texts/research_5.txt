@@ -1,0 +1,49 @@
+On the one hand, travel time is important in planning and managing urban roads; on the other hand, it is 
+important in commuters' route and departure time decisions. Often, mode and route choices and a sense of 
+departure time are mainly based on one’s perceived travel time (PTT). This study focuses on modelling 
+travellers’ PTT considering socio-economic and trip attributes for an urban corridor, taking Surat as a case 
+study. An ANOVA test has been conducted to identify factors governing PTT. Analysis shows that trip 
+attributes (e.g., traffic conditions, traffic environment, and travel distance) influence PTT more than 
+travellers' socio-economic characteristics (e.g., income, occupation, age, and vehicle ownership). 
+Commuters overestimate PTT (min/km) nearly two-fold, and the overestimation decreases with increasing 
+trip distance. A PTT Estimation Model has been developed using Fuzzy Logic, considering the epistemic 
+uncertainty associated with attributes. The developed model can help inform necessary improvement 
+measures to bring travel times to a reasonable level.
+
+Recently, traffic congestion, owing to the significant growth in the vehicular population 
+in metropolitan areas, has reached an alarming level. It has resulted in longer, 
+unpredictable, and unreliable travel times in most of the urban corridors in India (Verma 
+et al., 2021). Therefore, it is becoming increasingly important to study various aspects of 
+corridor travel time. Travel time can be interpreted in two terms: measured travel time 
+(MTT) and perceived travel time (PTT). The MTT reflects the realistic traffic and road 
+situation, whereas the PTT is primarily concerned with the commuters' perception of the 
+holistic assessment of the entire corridor. As such, PTT is the outcome of integrating a 
+series of stimuli or enroute sequential journey episodes, and it has no straightforward 
+relationship to MTT (Fraisse, 1984). Hence, the subjective duration experienced by 
+commuters does differ from the actual one (Nicholson and Munakata, 2009; Malichova et al., 2022). Perhaps this is why commuters prefer to consider perceived times in their 
+trip planning, such as route and departure time choices. It is also a fact that most 
+commuters give weight to the cost based on perceived travel time rather than the actual 
+cost of the trip. Hence, travel time perceived by commuters is more relevant than physical 
+travel distance (MacEachren, 1980). This is a fact that planners and managers cannot 
+overlook PTT when planning for a city’s transport system. Moreover, the perception of 
+travel time is a complex phenomenon with an associated degree of uncertainty in 
+assessing traffic situations. Such uncertainty can be dealt with by a soft computing 
+technique, namely, fuzzy logic (Klir and Yuan, 1996). The objectives of this paper are, 
+therefore, to investigate the correlation of commuters’ socio-economic and trip 
+characteristics with their PTT and to model commuters’ PTT using fuzzy logic for an 
+urban corridor.
+The study progresses in four stages. The first stage covers study objectives and study 
+area selection, whereas database development for the defined objectives is dealt with in 
+the second stage. The focus of the third stage is on the analysis of attributes for their 
+influence on PTT, whereas the development of a fuzzy logic model for the estimation of 
+perceived travel time is part of the fourth stage. Database development covers PTT and 
+MTT characteristics for the selected 12 km-long corridor in Surat, India. The PTT is based 
+on the home interviews of the commuters about their trips on the study corridor. In the 
+present study, PTT is the travel time sensed by commuters based on their riding 
+experience in prevailing traffic conditions, traffic environment, and trip length.
+The home interview data is related to both socio-economic attributes and the travel time 
+experienced by commuters. The MTT on the study corridor has been collected using VBox probe vehicles. A statistical analysis has been carried out to understand the perceived 
+travel time variation and weightage of the attributes. The identified input variables are 
+considered in developing the Perceived Travel Time Estimation Model (PTTEM) by 
+employing fuzzy logic to address the uncertainty in travellers’ perceptions of attributes.
+
