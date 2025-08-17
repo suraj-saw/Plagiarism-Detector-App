@@ -83,12 +83,12 @@ Prerequisites:
 - Python 3.8+
 - Flask installed (pip install flask)
 
-Backend Setup:
-cd backend
-pip install -r requirements.txt
-python server.py
+Backend Setup:<br>
+&nbsp;&nbsp;cd backend<br>
+&nbsp;&nbsp;pip install -r requirements.txt<br>
+&nbsp;&nbsp;python server.py<br>
 
-Flutter Setup:
-cd plagiarism_detector_app
-flutter pub get
-flutter run
+Flutter Setup:<br>
+&nbsp;&nbsp;cd plagiarism_detector_app<br>
+&nbsp;&nbsp;flutter pub get<br>
+&nbsp;&nbsp;flutter run<br>
