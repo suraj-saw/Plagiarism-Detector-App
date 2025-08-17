@@ -46,7 +46,9 @@ Backend (Flask - Python)
 - Home Screen (enter text to check plagiarism) →
 - Analysis Screen (results with highlights & percentage).
 
-📂 Project Structure
+## 📂 Project Structure  
+
+```text
 PlagiarismDetectorApp/
 │── lib/
 │   ├── main.dart
@@ -70,6 +72,7 @@ PlagiarismDetectorApp/
 │── README.md
 │── pubspec.yaml
 │── requirements.txt
+
 
 ⚡ Getting Started
 
