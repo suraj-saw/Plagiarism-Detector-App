@@ -19,7 +19,7 @@ stop_words = set(stopwords.words('english'))
 stemmer = PorterStemmer()
 
 # Folder paths
-REFERENCE_FOLDER = os.path.join(os.getcwd(), 'reference_texts')
+REFERENCE_FOLDER = os.path.join(os.path.dirname(__file__), 'reference_texts')
 metadata_file_path = os.path.join(os.path.dirname(__file__), 'file_metadata', 'metadata.json')
 
 # Load metadata (URLs) from JSON file
@@ -70,6 +70,18 @@ def get_ngrams(tokens, n=3):
 # Load reference texts, build inverted index, and load metadata
 reference_texts = load_and_preprocess_reference_texts(REFERENCE_FOLDER)
 inverted_index = build_inverted_index(reference_texts)
+
+@app.route('/')
+def home():
+    """Root endpoint to verify the API is running."""
+    return jsonify({
+        'message': 'Plagiarism Detection API is running!',
+        'endpoints': {
+            'preprocess': '/preprocess (POST)',
+            'check_plagiarism': '/check_plagiarism (POST)'
+        },
+        'status': 'active'
+    })
 
 @app.route('/preprocess', methods=['POST'])
 def preprocess_input_text():
