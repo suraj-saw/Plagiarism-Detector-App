@@ -11,7 +11,7 @@ class WordCounterController extends GetxController {
   final int maxWords = 500;
 
   // URL for Flask backend
-  final String apiUrl = 'https://b029b786-f8f7-4241-abd9-6a5c3373c73b-00-1dk7bsemjaqhu.sisko.replit.dev:5000/check_plagiarism';
+  final String apiUrl = 'https://45f8379c-9f22-4cad-bc34-92edb34a3756-00-30kbd76txwoeg.sisko.replit.dev';
 
   void updateWordCount() {
     // Split text by spaces and count non-empty strings
@@ -34,7 +34,7 @@ Future<void> checkPlagiarism() async {
 
   try {
     final response = await http.post(
-      Uri.parse(apiUrl),
+      Uri.parse('$apiUrl/check_plagiarism'),
       headers: {'Content-Type': 'application/json'},
       body: json.encode({'text': text}),
     );
