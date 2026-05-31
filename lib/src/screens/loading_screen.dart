@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 
+// No changes needed — kept identical to original.
 class LoadingScreen extends StatelessWidget {
   const LoadingScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -13,7 +14,7 @@ class LoadingScreen extends StatelessWidget {
             const CircularProgressIndicator(),
             const SizedBox(height: 20),
             Text(
-              "Fetching plagiarism results...",
+              'Fetching plagiarism results...',
               style: Theme.of(context).textTheme.displayMedium,
             ),
           ],

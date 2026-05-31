@@ -10,11 +10,11 @@ class WordCounterController extends GetxController {
   final TextEditingController textController = TextEditingController();
   final int maxWords = 500;
 
-  // URL for Flask backend
-  final String apiUrl = 'https://plagiarism-api-black.vercel.app/';
+  // ── FIX 1: Removed trailing slash so endpoint becomes /check_plagiarism
+  //           not //check_plagiarism ──────────────────────────────────────
+  static const String _apiBase = 'https://plagiarism-api-black.vercel.app';
 
   void updateWordCount() {
-    // Split text by spaces and count non-empty strings
     wordCount.value = textController.text
         .trim()
         .split(RegExp(r'\s+'))
@@ -22,66 +22,120 @@ class WordCounterController extends GetxController {
         .length;
   }
 
-  // Check for plagiarism
-Future<void> checkPlagiarism() async {
-  final text = textController.text;
-  if (text.isEmpty) {
-    return;
-  }
+  Future<void> checkPlagiarism() async {
+    final text = textController.text.trim();
 
-  // Show the loading screen
-  Get.to(() => const LoadingScreen());
+    // ── FIX 2: Guard – empty text ─────────────────────────────────────────
+    if (text.isEmpty) {
+      Get.snackbar(
+        'Empty Text',
+        'Please enter some text before checking.',
+        snackPosition: SnackPosition.BOTTOM,
+        backgroundColor: Get.theme.colorScheme.errorContainer,
+        colorText: Get.theme.colorScheme.onErrorContainer,
+      );
+      return;
+    }
 
-  try {
-    final response = await http.post(
-      Uri.parse('$apiUrl/check_plagiarism'),
-      headers: {'Content-Type': 'application/json'},
-      body: json.encode({'text': text}),
-    );
+    // ── FIX 3: Guard – word limit ─────────────────────────────────────────
+    if (wordCount.value > maxWords) {
+      Get.snackbar(
+        'Word Limit Exceeded',
+        'Please reduce your text to $maxWords words or fewer.',
+        snackPosition: SnackPosition.BOTTOM,
+        backgroundColor: Get.theme.colorScheme.errorContainer,
+        colorText: Get.theme.colorScheme.onErrorContainer,
+      );
+      return;
+    }
 
-    if (response.statusCode == 200) {
-      final Map<String, dynamic> responseData = json.decode(response.body);
-      final bool plagiarismDetected = responseData['plagiarism_detected'];
-      final List<dynamic> matchesData = responseData['matches'];
+    // ── Show loading screen ───────────────────────────────────────────────
+    Get.to(() => const LoadingScreen());
 
-      // Convert the matches list into a List<Map<String, dynamic> with link and snippet
-      final List<Map<String, dynamic>> matches = matchesData
-          .map((match) => {
-                'ngram': match['ngram'],
-                'reference_snippet': match['reference_snippet'],
-                'link': match['link'],
-              })
-          .toList();
+    try {
+      final response = await http
+          .post(
+            // ── FIX 1 applied: clean URL, no double slash ────────────────
+            Uri.parse('$_apiBase/check_plagiarism'),
+            headers: {'Content-Type': 'application/json'},
+            body: json.encode({'text': text}),
+          )
+          .timeout(
+            const Duration(seconds: 60),
+            onTimeout: () => throw Exception(
+              'Request timed out. Please check your connection and try again.',
+            ),
+          );
 
-      // Navigate to the results screen after the data is fetched
-      Get.off(() => PlagiarismResultsScreen(
-            userText: text,
-            plagiarismDetected: plagiarismDetected,
-            matches: matches,
-          ));
-    } else {
+      if (response.statusCode == 200) {
+        final Map<String, dynamic> responseData = json.decode(response.body);
+
+        final bool plagiarismDetected =
+            responseData['plagiarism_detected'] as bool? ?? false;
+
+        // ── FIX 4: Read plagiarism_percentage directly from backend ───────
+        //          (was ignored before; result_screen was recalculating
+        //           it incorrectly using snippet lengths)
+        final double plagiarismPercentage =
+            (responseData['plagiarism_percentage'] as num?)?.toDouble() ?? 0.0;
+
+        final List<dynamic> matchesData =
+            responseData['matches'] as List<dynamic>? ?? [];
+
+        final List<Map<String, dynamic>> matches = matchesData
+            .map((match) => {
+                  'ngram': match['ngram'] as String? ?? '',
+                  'reference_snippet':
+                      match['reference_snippet'] as String? ?? '',
+                  'link': match['link'] as String? ?? 'No link available',
+                })
+            .toList();
+
+        // ── FIX 5: Deduplicate matches by source link before navigating ───
+        //          (backend returns one entry per ngram hit, so the same
+        //           source can appear dozens of times)
+        final seen = <String>{};
+        final uniqueMatches = matches
+            .where((m) => seen.add(m['link'] as String))
+            .toList();
+
+        // ── Replace LoadingScreen with ResultsScreen (not push on top) ────
+        Get.off(() => PlagiarismResultsScreen(
+              userText: text,
+              plagiarismDetected: plagiarismDetected,
+              // ── FIX 4 continued: pass backend percentage ─────────────────
+              plagiarismPercentage: plagiarismPercentage,
+              // ── FIX 5 continued: pass deduplicated list ───────────────────
+              matches: uniqueMatches,
+            ));
+      } else {
+        // ── FIX 6: Go back to HomeScreen (not LoadingScreen) on error ─────
+        Get.back();
+        Get.snackbar(
+          'Server Error',
+          'Failed to check plagiarism. Status: ${response.statusCode}',
+          snackPosition: SnackPosition.BOTTOM,
+          backgroundColor: Get.theme.colorScheme.errorContainer,
+          colorText: Get.theme.colorScheme.onErrorContainer,
+        );
+      }
+    } catch (e) {
+      // ── FIX 6: Go back to HomeScreen on exception too ─────────────────
+      Get.back();
       Get.snackbar(
         'Error',
-        'Failed to check plagiarism. Status code: ${response.statusCode}',
+        e.toString().replaceFirst('Exception: ', ''),
         snackPosition: SnackPosition.BOTTOM,
+        backgroundColor: Get.theme.colorScheme.errorContainer,
+        colorText: Get.theme.colorScheme.onErrorContainer,
       );
-      Get.back();
     }
-  } catch (e) {
-    Get.snackbar(
-      'Error',
-      'An error occurred: $e',
-      snackPosition: SnackPosition.BOTTOM,
-    );
-    Get.back();
   }
-}
 
   @override
   void onInit() {
     super.onInit();
-    textController
-        .addListener(updateWordCount);
+    textController.addListener(updateWordCount);
   }
 
   @override
