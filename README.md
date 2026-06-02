@@ -8,7 +8,7 @@ A cross-platform mobile application built with **Flutter** that detects plagiari
 
 | Home Screen | Results – High Plagiarism | Results – Original |
 |---|---|---|
-| *c:\Users\Suraj Kumar Saw\OneDrive\Pictures\Screenshots\Screenshot 2026-06-02 103835.png* | ![High Plagiarism](c:\users\suraj kumar saw\OneDrive\Pictures\Screenshots\Screenshot 2026-06-02 100657.png) | ![Original](c:\users\suraj kumar saw\OneDrive\Pictures\Screenshots\Screenshot 2026-06-02 100715.png) |
+| *C:\Users\Suraj Kumar Saw\flutter_projects\plagiarism_detector_app\lib\screenshots\Home Page.png* | ![High Plagiarism](C:\Users\Suraj Kumar Saw\flutter_projects\plagiarism_detector_app\lib\screenshots\High Plagiarism Result.png) | ![Original](C:\Users\Suraj Kumar Saw\flutter_projects\plagiarism_detector_app\lib\screenshots\Low Plagiarism Result.png) |
 
 ---
 
