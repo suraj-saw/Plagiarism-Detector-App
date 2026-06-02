@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-// No changes needed — kept identical to original.
 class LoadingScreen extends StatelessWidget {
   const LoadingScreen({super.key});
 

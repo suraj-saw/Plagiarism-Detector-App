@@ -6,9 +6,6 @@ class PlagiarismResultsScreen extends StatelessWidget {
   final String userText;
   final List<Map<String, dynamic>> matches;
   final bool plagiarismDetected;
-  // ── FIX 4: Accept plagiarismPercentage from backend instead of
-  //           recalculating it locally (old calc used snippet lengths
-  //           which gave wildly inaccurate numbers) ─────────────────────────
   final double plagiarismPercentage;
 
   const PlagiarismResultsScreen({
@@ -16,7 +13,7 @@ class PlagiarismResultsScreen extends StatelessWidget {
     required this.userText,
     required this.matches,
     required this.plagiarismDetected,
-    required this.plagiarismPercentage, // ← new required param
+    required this.plagiarismPercentage, 
   });
 
   Future<void> _launchURL(BuildContext context, String url) async {
@@ -38,7 +35,6 @@ class PlagiarismResultsScreen extends StatelessWidget {
     }
   }
 
-  // ── Colour-codes the percentage badge ─────────────────────────────────────
   Color _percentageColor(BuildContext context) {
     if (plagiarismPercentage < 20) return Colors.green.shade600;
     if (plagiarismPercentage < 50) return Colors.orange.shade700;
@@ -70,7 +66,7 @@ class PlagiarismResultsScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // ── Summary card ─────────────────────────────────────────────
+            
             _SummaryCard(
               plagiarismDetected: plagiarismDetected,
               plagiarismPercentage: plagiarismPercentage,
@@ -81,7 +77,6 @@ class PlagiarismResultsScreen extends StatelessWidget {
 
             const SizedBox(height: 20),
 
-            // ── Submitted text ────────────────────────────────────────────
             Text(
               'Your Text:',
               style: Theme.of(context).textTheme.displayLarge,
@@ -103,10 +98,8 @@ class PlagiarismResultsScreen extends StatelessWidget {
 
             const SizedBox(height: 24),
 
-            // ── Matched sources ────────────────────────────────────────────
             if (plagiarismDetected) ...[
               Text(
-                // ── FIX 5: matches are already deduplicated in controller ──
                 'Matched Sources (${matches.length}):',
                 style: Theme.of(context).textTheme.titleSmall,
               ),
@@ -136,7 +129,6 @@ class PlagiarismResultsScreen extends StatelessWidget {
   }
 }
 
-// ── Summary card widget ──────────────────────────────────────────────────────
 class _SummaryCard extends StatelessWidget {
   final bool plagiarismDetected;
   final double plagiarismPercentage;
@@ -221,7 +213,6 @@ class _SummaryCard extends StatelessWidget {
   }
 }
 
-// ── Individual source card ───────────────────────────────────────────────────
 class _SourceCard extends StatelessWidget {
   final Map<String, dynamic> match;
   final void Function(String url) onLaunch;

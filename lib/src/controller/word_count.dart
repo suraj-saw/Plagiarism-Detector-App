@@ -10,8 +10,6 @@ class WordCounterController extends GetxController {
   final TextEditingController textController = TextEditingController();
   final int maxWords = 500;
 
-  // ── FIX 1: Removed trailing slash so endpoint becomes /check_plagiarism
-  //           not //check_plagiarism ──────────────────────────────────────
   static const String _apiBase = 'https://plagiarism-api-black.vercel.app';
 
   void updateWordCount() {
@@ -25,7 +23,6 @@ class WordCounterController extends GetxController {
   Future<void> checkPlagiarism() async {
     final text = textController.text.trim();
 
-    // ── FIX 2: Guard – empty text ─────────────────────────────────────────
     if (text.isEmpty) {
       Get.snackbar(
         'Empty Text',
@@ -37,7 +34,6 @@ class WordCounterController extends GetxController {
       return;
     }
 
-    // ── FIX 3: Guard – word limit ─────────────────────────────────────────
     if (wordCount.value > maxWords) {
       Get.snackbar(
         'Word Limit Exceeded',
@@ -49,13 +45,11 @@ class WordCounterController extends GetxController {
       return;
     }
 
-    // ── Show loading screen ───────────────────────────────────────────────
     Get.to(() => const LoadingScreen());
 
     try {
       final response = await http
           .post(
-            // ── FIX 1 applied: clean URL, no double slash ────────────────
             Uri.parse('$_apiBase/check_plagiarism'),
             headers: {'Content-Type': 'application/json'},
             body: json.encode({'text': text}),
@@ -73,9 +67,6 @@ class WordCounterController extends GetxController {
         final bool plagiarismDetected =
             responseData['plagiarism_detected'] as bool? ?? false;
 
-        // ── FIX 4: Read plagiarism_percentage directly from backend ───────
-        //          (was ignored before; result_screen was recalculating
-        //           it incorrectly using snippet lengths)
         final double plagiarismPercentage =
             (responseData['plagiarism_percentage'] as num?)?.toDouble() ?? 0.0;
 
@@ -91,25 +82,18 @@ class WordCounterController extends GetxController {
                 })
             .toList();
 
-        // ── FIX 5: Deduplicate matches by source link before navigating ───
-        //          (backend returns one entry per ngram hit, so the same
-        //           source can appear dozens of times)
         final seen = <String>{};
         final uniqueMatches = matches
             .where((m) => seen.add(m['link'] as String))
             .toList();
 
-        // ── Replace LoadingScreen with ResultsScreen (not push on top) ────
         Get.off(() => PlagiarismResultsScreen(
               userText: text,
               plagiarismDetected: plagiarismDetected,
-              // ── FIX 4 continued: pass backend percentage ─────────────────
               plagiarismPercentage: plagiarismPercentage,
-              // ── FIX 5 continued: pass deduplicated list ───────────────────
               matches: uniqueMatches,
             ));
       } else {
-        // ── FIX 6: Go back to HomeScreen (not LoadingScreen) on error ─────
         Get.back();
         Get.snackbar(
           'Server Error',
@@ -120,7 +104,6 @@ class WordCounterController extends GetxController {
         );
       }
     } catch (e) {
-      // ── FIX 6: Go back to HomeScreen on exception too ─────────────────
       Get.back();
       Get.snackbar(
         'Error',

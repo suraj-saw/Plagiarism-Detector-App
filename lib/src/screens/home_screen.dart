@@ -16,7 +16,6 @@ class HomeScreen extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              // ── Title ───────────────────────────────────────────────────
               Container(
                 height: Get.height * 0.1,
                 width: double.infinity,
@@ -30,7 +29,6 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
 
-              // ── Input + controls ─────────────────────────────────────────
               Container(
                 height: Get.height * 0.7,
                 width: double.infinity,
@@ -39,7 +37,6 @@ class HomeScreen extends StatelessWidget {
                   children: [
                     // Text field
                     Obx(() {
-                      // ── Word-limit border colour feedback ─────────────────
                       final bool overLimit = wordCountController.wordCount.value >
                           wordCountController.maxWords;
                       return Container(
@@ -50,7 +47,6 @@ class HomeScreen extends StatelessWidget {
                         decoration: BoxDecoration(
                           color: Theme.of(context).colorScheme.surface,
                           border: Border.all(
-                            // ── Red border when over word limit ──────────────
                             color: overLimit
                                 ? Theme.of(context).colorScheme.error
                                 : Colors.grey,
@@ -95,7 +91,6 @@ class HomeScreen extends StatelessWidget {
                             ),
                           ),
 
-                          // ── Word count badge (red when over limit) ────────
                           Obx(() {
                             final int count =
                                 wordCountController.wordCount.value;
